@@ -1,2 +1,50 @@
 backend/.vscode
 backend.venv
+
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+env/
+.venv/
+*.sqlite3
+db.sqlite3
+
+# Django
+*.log
+*.pot
+*.py[cod]
+media/
+staticfiles/
+local_settings.py
+.env
+
+# VS Code
+.vscode/
+
+# Node
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Vite / React
+*.local
+.DS_Store
+.cache/
+*.tsbuildinfo
+
+# Docker
+*.pid
+*.sock
+*.db
+*.log
+
+# System
+Thumbs.db
+ehthumbs.db
+.idea/
+*.swp
