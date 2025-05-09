@@ -13,9 +13,14 @@ services:
     ports:
       - "5432:5432"
 
+  redis:
+    image: redis:7
+    restart: always
+    ports:
+      - "6379:6379"
+
   web:
     build: .
-    # command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
@@ -24,12 +29,21 @@ services:
       - "8000:8000"
     depends_on:
       - db
+      - redis
     environment:
       - DATABASE_URL=postgres://imdb_user:imdb_pass@db:5432/imdb
       - STATIC_ROOT=/vol/web/static
-    # dns:
-    #   - 8.8.8.8
-    #   - 1.1.1.1
+
+  celery:
+    build: .
+    command: celery -A config worker --loglevel=info
+    volumes:
+      - .:/app
+    depends_on:
+      - web
+      - redis
+    environment:
+      - DATABASE_URL=postgres://imdb_user:imdb_pass@db:5432/imdb
 
 volumes:
   postgres_data:
