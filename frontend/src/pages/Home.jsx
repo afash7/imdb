@@ -21,8 +21,13 @@ export default function Home() {
             key={movie.id}
             className="bg-gray-800 rounded-xl shadow hover:shadow-lg transition"
           >
-            <img
+            {/* <img
               src={movie.poster}
+              alt={movie.title}
+              className="w-full h-64 object-cover rounded-t-xl"
+            /> */}
+            <img
+              src={movie.poster || 'https://via.placeholder.com/300x450?text=No+Image'}
               alt={movie.title}
               className="w-full h-64 object-cover rounded-t-xl"
             />
