@@ -7,17 +7,17 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  console.log('Home component rendering'); // اضافه کنید
+  console.log('Home component rendering'); 
 
   useEffect(() => {
-    console.log('useEffect is running'); // اضافه کنید
+    console.log('useEffect is running'); 
 
     const fetchMovies = async () => {
-      console.log('fetchMovies is called'); // اضافه کنید
+      console.log('fetchMovies is called'); 
       try {
-        console.log('Attempting axios.get'); // اضافه کنید
-        const res = await axios.get('/api/movies/'); // خطی که انتظار داریم درخواست شبکه را ایجاد کند
-        console.log('Received data:', res.data); // اضافه کنید
+        console.log('Attempting axios.get'); 
+        const res = await axios.get('/api/movies/'); 
+        console.log('Received data:', res.data); 
         setMovies(res.data);
         setLoading(false);
       } catch (err) {
@@ -28,24 +28,24 @@ export default function Home() {
     };
 
     fetchMovies();
-    console.log('fetchMovies function called in useEffect'); // اضافه کنید
+    console.log('fetchMovies function called in useEffect');
 
   }, []);
 
-  console.log('Current movies state:', movies); // اضافه کنید (این در هر رندر اجرا می‌شود)
+  console.log('Current movies state:', movies); 
 
 
   if (loading) {
-    console.log('Rendering Loading state'); // اضافه کنید
+    console.log('Rendering Loading state'); 
     return <div className="p-4 text-white text-center">Loading movies...</div>;
   }
 
   if (error) {
-    console.log('Rendering Error state'); // اضافه کنید
+    console.log('Rendering Error state'); 
     return <div className="p-4 text-red-500 text-center">{error}</div>;
   }
 
-  console.log('Rendering movie list with movies:', movies); // اضافه کنید
+  console.log('Rendering movie list with movies:', movies); 
 
   return (
     <div className="p-4 text-white bg-gray-900 min-h-screen">
