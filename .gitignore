@@ -1,5 +1,7 @@
 backend/.vscode
 backend.venv
+backend/all_codes.py
+all_codes.py
 
 # Python
 *.pyc

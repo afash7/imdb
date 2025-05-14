@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'movies',
     'reviews',
     'notifications',
+    'django_filters',
 ]
 
 
