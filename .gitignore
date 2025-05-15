@@ -2,6 +2,8 @@ backend/.vscode
 backend.venv
 backend/all_codes.py
 all_codes.py
+source_exporter.sh
+code_files.txt
 
 # Python
 *.pyc

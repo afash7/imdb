@@ -3,7 +3,9 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
+  // const [email, setEmail] = useState(''); 
   const [username, setUsername] = useState('');
+  // const [fullName, setFullName] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 

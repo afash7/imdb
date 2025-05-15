@@ -51,7 +51,6 @@ export default function Home() {
     <div className="p-4 text-white bg-gray-900 min-h-screen">
       <h1 className="text-3xl font-bold text-yellow-400 mb-6">Popular Movies</h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-        {/* این خط 👇 است که خطای movies.map ممکن است در آن رخ دهد */}
         {movies.map(movie => (
           <Link
             to={`/movie/${movie.id}`}
